@@ -101,10 +101,10 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Duration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Discount" Type="Int32" Nullable="false" />
+    <Property Name="Discount" Type="Int32" />
     <NavigationProperty Name="ClientService" Relationship="Self.FK_ClientService_Services" FromRole="Service" ToRole="ClientService" />
     <NavigationProperty Name="ServicePhoto" Relationship="Self.FK_ServicePhoto_Services" FromRole="Service" ToRole="ServicePhoto" />
   </EntityType>

@@ -15,13 +15,17 @@ namespace Timerzyanov_autoservice
     
     public partial class Timerzyanov_autoserviceEntities : DbContext
     {
+
         private static Timerzyanov_autoserviceEntities _context;
+
         public static Timerzyanov_autoserviceEntities GetContext()
         {
             if (_context == null)
                 _context = new Timerzyanov_autoserviceEntities();
+
             return _context;
         }
+
         public Timerzyanov_autoserviceEntities()
             : base("name=Timerzyanov_autoserviceEntities")
         {

@@ -91,10 +91,10 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Image" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" />
     <Property Name="Duration" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Cost" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Discount" Type="int" Nullable="false" />
+    <Property Name="Discount" Type="int" />
   </EntityType>
   <EntityType Name="ServicePhoto">
     <Key>
