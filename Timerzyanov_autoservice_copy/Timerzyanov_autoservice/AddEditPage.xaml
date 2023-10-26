@@ -24,7 +24,7 @@
         <TextBlock Text="Название" FontSize="15" Grid.Column="0" Grid.Row="0"
                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
         <TextBlock Text="Стоимость" FontSize="15" Grid.Column="0" Grid.Row="1"
-                   HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                   HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35"></TextBlock>
         <TextBlock Text="Длительность" FontSize="15" Grid.Column="0" Grid.Row="2"
                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
         <TextBlock Text="Скидка" FontSize="15" Grid.Column="0" Grid.Row="3"

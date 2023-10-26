@@ -38,21 +38,26 @@ namespace Timerzyanov_autoservice
             if (string.IsNullOrWhiteSpace(_currentService.Title))
                 errors.AppendLine("Укажите название услуги");
 
+            if (string.IsNullOrWhiteSpace(_currentService.Duration))
+                errors.AppendLine("Укажите длительность услуги");
+
+            if (string.IsNullOrWhiteSpace(_currentService.Discount.ToString()))
+                errors.AppendLine("Укажите скидку");
+
             if (_currentService.Cost == 0)
                 errors.AppendLine("Укажите стоимость услуги");
 
             if (_currentService.Discount < 0 || _currentService.Discount > 100)
                 errors.AppendLine("Укажите корректную скидку");
 
-            if (string.IsNullOrWhiteSpace(_currentService.Duration))
-                errors.AppendLine("Укажите длительность услуги");
 
-            if(errors.Length>0)
+
+            if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
-
+           
             if (_currentService.ID == 0)
                 Timerzyanov_autoserviceEntities.GetContext().Service.Add(_currentService);
             try
@@ -61,10 +66,11 @@ namespace Timerzyanov_autoservice
                 MessageBox.Show("Информация сохранена");
                 Manager.MainFrame.GoBack();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+            
         }
     }
 }
