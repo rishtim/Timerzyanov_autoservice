@@ -102,6 +102,9 @@
     <Compile Include="ServicePhoto.cs">
       <DependentUpon>TimerzyanovModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tag.cs">
       <DependentUpon>TimerzyanovModel.tt</DependentUpon>
     </Compile>
@@ -111,13 +114,13 @@
       <DependentUpon>TimerzyanovModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="TimerzyanovModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>TimerzyanovModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="TimerzyanovModel.Designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>TimerzyanovModel.edmx</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
@@ -137,6 +140,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,16 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Res\picture.jpg" />
-    <Content Include="TimerzyanovModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TimerzyanovModel.edmx</DependentUpon>
-      <LastGenOutput>TimerzyanovModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="TimerzyanovModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TimerzyanovModel.edmx</DependentUpon>
-      <LastGenOutput>TimerzyanovModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Услуги автосервиса\diz.jpg" />
     <Resource Include="Услуги автосервиса\rulevoe-upravlenie-avtomobilya.jpg" />
     <Resource Include="Услуги автосервиса\transmission.jpg" />
@@ -213,6 +210,18 @@
     <Resource Include="Услуги автосервиса\Топливная система.png" />
     <Resource Include="Услуги автосервиса\Шиномонтаж.jpg" />
     <Resource Include="Услуги автосервиса\Электрика.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TimerzyanovModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TimerzyanovModel.edmx</DependentUpon>
+      <LastGenOutput>TimerzyanovModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TimerzyanovModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TimerzyanovModel.cs</LastGenOutput>
+      <DependentUpon>TimerzyanovModel.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

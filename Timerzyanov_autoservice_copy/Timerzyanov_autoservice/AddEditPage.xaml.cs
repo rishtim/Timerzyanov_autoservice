@@ -21,13 +21,18 @@ namespace Timerzyanov_autoservice
     public partial class AddEditPage : Page
     {
 
+        public bool CheckStatusEdit=false;
+
         private Service _currentService = new Service();
         public AddEditPage(Service SelectedService)
         {
             InitializeComponent();
 
-            if(SelectedService !=null)
+            if (SelectedService != null)
+            {
                 _currentService = SelectedService;
+                CheckStatusEdit = true;
+            }
             DataContext = _currentService;
         }
 
@@ -38,7 +43,7 @@ namespace Timerzyanov_autoservice
             if (string.IsNullOrWhiteSpace(_currentService.Title))
                 errors.AppendLine("Укажите название услуги");
 
-            if (string.IsNullOrWhiteSpace(_currentService.Duration))
+            if (_currentService.Discount==null)
                 errors.AppendLine("Укажите длительность услуги");
 
             if (string.IsNullOrWhiteSpace(_currentService.Discount.ToString()))
@@ -46,6 +51,14 @@ namespace Timerzyanov_autoservice
 
             if (_currentService.Cost == 0)
                 errors.AppendLine("Укажите стоимость услуги");
+
+            if (_currentService.Duration == 0)
+                errors.AppendLine("Укажите длительность услуги");
+
+            if (_currentService.Duration > 240)
+                errors.AppendLine("Длительность не может быть больше 240 минут");
+            if (_currentService.Duration < 0)
+                errors.AppendLine("Длительность не может быть меньше 0 минут");
 
             if (_currentService.Discount < 0 || _currentService.Discount > 100)
                 errors.AppendLine("Укажите корректную скидку");
@@ -57,19 +70,27 @@ namespace Timerzyanov_autoservice
                 MessageBox.Show(errors.ToString());
                 return;
             }
-           
-            if (_currentService.ID == 0)
-                Timerzyanov_autoserviceEntities.GetContext().Service.Add(_currentService);
-            try
+
+            var allServices = Timerzyanov_autoserviceEntities.GetContext().Service.ToList();
+            allServices = allServices.Where(p => p.Title == _currentService.Title).ToList();
+
+            if (allServices.Count == 0||CheckStatusEdit==true)
             {
-                Timerzyanov_autoserviceEntities.GetContext().SaveChanges();
-                MessageBox.Show("Информация сохранена");
-                Manager.MainFrame.GoBack();
+                if (_currentService.ID == 0)
+                    Timerzyanov_autoserviceEntities.GetContext().Service.Add(_currentService);
+                try
+                {
+                    Timerzyanov_autoserviceEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Информация сохранена");
+                    Manager.MainFrame.GoBack();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
+            else
+                MessageBox.Show("Уже существует такая услуга");
             
         }
     }

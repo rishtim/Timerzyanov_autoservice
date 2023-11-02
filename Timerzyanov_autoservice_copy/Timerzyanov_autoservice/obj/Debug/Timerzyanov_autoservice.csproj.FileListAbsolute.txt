@@ -75,3 +75,5 @@ C:\Users\Resha\Desktop\учеба\програм модули\Timerzyanov_autose
 C:\Users\Resha\Desktop\учеба\програм модули\Timerzyanov_autoservice\Timerzyanov_autoservice_copy\Timerzyanov_autoservice\obj\Debug\Timerzyanov_autoservice.csproj.CopyComplete
 C:\Users\Resha\Desktop\учеба\програм модули\Timerzyanov_autoservice\Timerzyanov_autoservice_copy\Timerzyanov_autoservice\obj\Debug\Timerzyanov_autoservice.exe
 C:\Users\Resha\Desktop\учеба\програм модули\Timerzyanov_autoservice\Timerzyanov_autoservice_copy\Timerzyanov_autoservice\obj\Debug\Timerzyanov_autoservice.pdb
+C:\Users\Resha\Desktop\учеба\програм модули\Timerzyanov_autoservice\Timerzyanov_autoservice_copy\Timerzyanov_autoservice\obj\Debug\SignUpPage.g.cs
+C:\Users\Resha\Desktop\учеба\програм модули\Timerzyanov_autoservice\Timerzyanov_autoservice_copy\Timerzyanov_autoservice\obj\Debug\SignUpPage.baml

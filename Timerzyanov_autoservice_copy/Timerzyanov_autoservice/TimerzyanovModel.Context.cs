@@ -22,10 +22,8 @@ namespace Timerzyanov_autoservice
         {
             if (_context == null)
                 _context = new Timerzyanov_autoserviceEntities();
-
             return _context;
         }
-
         public Timerzyanov_autoserviceEntities()
             : base("name=Timerzyanov_autoserviceEntities")
         {
